@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
+import 'style/style.dart';
 
 void main() {
   runApp(const MyApp());
@@ -56,97 +58,182 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+  // style
+  final ButtonStyle style =
+  ElevatedButton.styleFrom(
+    textStyle: const TextStyle(fontSize: 25),
+    backgroundColor: Colors.black87,
+    foregroundColor: Colors.white,
+    padding: const EdgeInsets.all(30),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(50),
+    ),
+  );
 
   @override
   Widget build(BuildContext context) {
-
-    // style
-    final ButtonStyle style =
-      ElevatedButton.styleFrom(
-        textStyle: const TextStyle(fontSize: 25),
-        backgroundColor: Colors.black87,
-        foregroundColor: Colors.white,
-        padding: const EdgeInsets.all(30),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(50),
-        ),
-      );
-
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
+
+      // appbar
       appBar: AppBar(
-        toolbarHeight: 1,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(6.0),
-        child: Column(
+        title: const Column(
           children: [
-
-            Container(
-              width: double.infinity,
-              height: 100,
-              margin: const EdgeInsets.all(5.0),
-              child: Image.asset(
-                'images/logo_standard.png',
+            Text(
+              "MONACIDOMENICO.LAB",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'ZenAntique',
+                fontWeight: FontWeight.w700,
               ),
             ),
+             Text(
+              "HAIR DESIGNER",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'ZenAntique',
+                fontWeight: FontWeight.w200,
+                fontSize: 18,
+              ),
+            ),
+          ],
+        ),
 
-            Container(
-              height: 100,
-              margin: const EdgeInsets.all(5.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    'Ciao \nnome utente',
-                    style: TextStyle(fontSize: 26,),
-                    textAlign: TextAlign.left,
-                  ),
-                  IconButton(
+        toolbarHeight: 100,
+        backgroundColor: Colors.white,
+        elevation: 10,
+        leading:
+          Container(
+            height: 300,
+          ),
+      ),
+
+      bottomNavigationBar: NavigationBar(
+        destinations: const <Widget>[
+          NavigationDestination(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.info),
+            label: 'Info',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.cut),
+            label: 'Prenota',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.shopping_bag_rounded),
+            label: 'Servizi',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.account_circle),
+            label: 'Utente',
+          ),
+        ],
+      ),
+
+      body: SingleChildScrollView(
+        child:Padding(
+          padding: const EdgeInsets.all(6.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+
+              Container(
+                height: 100,
+                margin: const EdgeInsets.all(5.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Ciao \nnome utente',
+                      style: TextStyle(fontSize: 26,),
+                      textAlign: TextAlign.left,
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.notifications),
+                      iconSize: 40,
+                    ),
+                  ],
+                ),
+              ),
+
+              const Divider(),
+              const Text("Novità", textAlign: TextAlign.left,),
+              Container(
+                width: double.infinity,
+                height: 200,
+                margin: const EdgeInsets.all(5.0),
+                color: Colors.black,
+              ),
+
+              const Divider(),
+              Align(
+                child:
+                  ElevatedButton.icon(
                     onPressed: () {},
+                    style: style,
                     icon: const Icon(Icons.notifications),
-                    iconSize: 40,
+                    label: const Text('Prenota ora'),
                   ),
-                ],
+                ),
+
+
+              const Divider(),
+              const Text("Prossima prenotazione", ),
+              Container(
+                width: double.infinity,
+                height: 150,
+                margin: const EdgeInsets.all(5.0),
+                color: Colors.grey,
+                padding: const EdgeInsets.all(60),
+                child: const Text("Nessuna prenotazione recente", textAlign: TextAlign.center),
               ),
-            ),
 
-            const Divider(),
-            const Text("Novità", textAlign: TextAlign.left,),
-            Container(
-              width: double.infinity,
-              height: 200,
-              margin: const EdgeInsets.all(5.0),
-              color: Colors.black,
-            ),
+              const Divider(),
+              const Text("Bonus", textAlign: TextAlign.left,),
+              SizedBox(
+                height: 100,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    for(var i = 0; i < 4; i++)
+                      Container(
+                        margin: const EdgeInsets.all(8),
+                        width: 100,
+                        height: double.infinity,
+                        color: Colors.grey,
+                        padding: const EdgeInsets.all(30),
+                        child: const Text("bonus" , textAlign: TextAlign.center,),
+                      )
+                  ],
+                ),
+              ),
 
-            const Divider(),
-            ElevatedButton.icon(
-              onPressed: () {},
-              style: style,
-              icon: const Icon(Icons.notifications),
-              label: const Text('Prenota ora'),
-            ),
-
+              const Divider(),
+              const Text("Eventi", textAlign: TextAlign.left,),
+              SizedBox(
+                height: 100,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    for(var i = 0; i < 3; i++)
+                      Container(
+                        margin: const EdgeInsets.all(8),
+                        width: 100,
+                        height: double.infinity,
+                        color: Colors.grey,
+                        padding: const EdgeInsets.all(30),
+                        child: const Text("evento" , textAlign: TextAlign.center,),
+                      )
+                  ],
+                ),
+              ),
           ],
         ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
       ),
     );
   }
