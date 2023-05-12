@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../style/style.dart';
+import '../screens/PagNotifiche.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -26,7 +27,9 @@ class Home extends StatelessWidget {
                       textAlign: TextAlign.left,
                     ),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => PagNotifiche()));
+                      },
                       icon: const Icon(Icons.notifications),
                       iconSize: 40,
                     ),

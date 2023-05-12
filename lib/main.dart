@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/home.dart';
 import 'screens/info.dart';
+import 'screens/servizi/elenco.dart';
 import '../style/style.dart';
 
 void main() {
@@ -41,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Home(),
     Info(),
     Center(child: Text('prenota')),
-    Center(child: Text('servizi')),
+    Servizi(),
     Center(child: Text('dashboard')),
   ];
 
