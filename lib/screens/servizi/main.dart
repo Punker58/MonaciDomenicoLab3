@@ -1,7 +1,5 @@
+import 'package:corso_flutter/widget/appBarBack.dart';
 import 'package:flutter/material.dart';
-import '../../style/style.dart';
-import 'elenco.dart';
-import '../../main.dart';
 
 class ElencoServizi extends StatelessWidget {
   const ElencoServizi({Key? key}) : super(key: key);
@@ -10,52 +8,7 @@ class ElencoServizi extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      appBar: AppBar(
-        title: Row(
-          children: [
-            Padding(padding: EdgeInsets.all(20),
-              child: IconButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Servizi()));
-                },
-                icon: const Icon(Icons.arrow_back),
-                iconSize: 40,
-              ),
-            ),
-
-            const Column(
-              children: [
-                Text(
-                  "MONACIDOMENICO.LAB",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'ZenAntique',
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                Text(
-                  "HAIR DESIGNER",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'ZenAntique',
-                    fontWeight: FontWeight.w200,
-                    fontSize: 18,
-                  ),
-                ),
-              ],
-            ),
-
-          ],
-        ),
-
-        toolbarHeight: 100,
-        backgroundColor: Colors.white,
-        elevation: 10,
-        leading:
-        Container(
-          height: 300,
-        ),
-      ),
+      appBar: MyappBarBack(),
 
       body: GridView.builder(
             itemCount: 14,
@@ -81,3 +34,4 @@ class ElencoServizi extends StatelessWidget {
     );
   }
 }
+

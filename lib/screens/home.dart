@@ -8,6 +8,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: SingleChildScrollView(
         child:Padding(
           padding: const EdgeInsets.all(6.0),
@@ -112,6 +113,7 @@ class Home extends StatelessWidget {
           ), // This trailing comma makes auto-formatting nicer for build methods.
         ),
       ),
+
     );
   }
 }

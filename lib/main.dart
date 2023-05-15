@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'screens/home.dart';
 import 'screens/info.dart';
 import 'screens/servizi/elenco.dart';
-import '../style/style.dart';
+import 'widget/appBar.dart';
+import 'screens/dashboard/main.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,44 +44,14 @@ class _MyHomePageState extends State<MyHomePage> {
     Info(),
     Center(child: Text('prenota')),
     Servizi(),
-    Center(child: Text('dashboard')),
+    DashMain(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
 
-      appBar: AppBar(
-        title: const Column(
-          children: [
-            Text(
-              "MONACIDOMENICO.LAB",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'ZenAntique',
-                fontWeight: FontWeight.w700,
-              ),
-            ),
-             Text(
-              "HAIR DESIGNER",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'ZenAntique',
-                fontWeight: FontWeight.w200,
-                fontSize: 18,
-              ),
-            ),
-          ],
-        ),
-
-        toolbarHeight: 100,
-        backgroundColor: Colors.white,
-        elevation: 10,
-        leading:
-          Container(
-            height: 300,
-          ),
-      ),
+      appBar: MyappBar(),
 
       bottomNavigationBar: NavigationBar(
         selectedIndex: _selectedIndex,
@@ -114,3 +85,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+

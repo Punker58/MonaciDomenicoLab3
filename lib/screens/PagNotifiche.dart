@@ -1,7 +1,6 @@
-import 'package:corso_flutter/main.dart';
+import 'package:corso_flutter/widget/appBar.dart';
 import 'package:flutter/material.dart';
 import '../style/style.dart';
-import 'home.dart';
 
 class PagNotifiche extends StatelessWidget {
   const PagNotifiche({Key? key}) : super(key: key);
@@ -10,52 +9,7 @@ class PagNotifiche extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      appBar: AppBar(
-        title: Row(
-          children: [
-            Padding(padding: EdgeInsets.all(20),
-            child: IconButton(
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute<void>(builder: (context) => MyHomePage(title: 'MONACI')));
-              },
-                icon: const Icon(Icons.arrow_back),
-                iconSize: 40,
-              ),
-        ),
-
-            const Column(
-              children: [
-                Text(
-                  "MONACIDOMENICO.LAB",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'ZenAntique',
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                Text(
-                  "HAIR DESIGNER",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'ZenAntique',
-                    fontWeight: FontWeight.w200,
-                    fontSize: 18,
-                  ),
-                ),
-              ],
-            ),
-
-          ],
-        ),
-
-        toolbarHeight: 100,
-        backgroundColor: Colors.white,
-        elevation: 10,
-        leading:
-        Container(
-          height: 300,
-        ),
-      ),
+      appBar: MyappBar(),
 
       body: SingleChildScrollView(
         child:Padding(

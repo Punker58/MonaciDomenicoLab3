@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 
 // testo bold
-final ZenBold = TextStyle(
+const zenBold = TextStyle(
   fontFamily: 'ZenAntique',
-  fontWeight: FontWeight.w700,
+   fontWeight: FontWeight.w700,
 );
+
+const zenLight = TextStyle(
+  fontFamily: 'ZenAntique',
+  fontWeight: FontWeight.w200,
+  fontSize: 18,
+);
+
 
 // style
 final ButtonStyle style =
