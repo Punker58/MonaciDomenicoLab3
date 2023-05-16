@@ -4,6 +4,7 @@ import 'screens/info.dart';
 import 'screens/servizi/elenco.dart';
 import 'widget/appBar.dart';
 import 'screens/dashboard/main.dart';
+import 'screens/prenotazione/main.dart';
 
 void main() {
   runApp(const MyApp());
@@ -42,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final _screens = const [
     Home(),
     Info(),
-    Center(child: Text('prenota')),
+    Prenota(),
     Servizi(),
     DashMain(),
   ];
@@ -54,27 +55,28 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: MyappBar(),
 
       bottomNavigationBar: NavigationBar(
+        backgroundColor: Colors.black,
         selectedIndex: _selectedIndex,
         onDestinationSelected: (index) => setState(() => _selectedIndex = index),
         destinations: const <Widget>[
           NavigationDestination(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.home, color: Colors.white),
             label: 'Home',
           ),
           NavigationDestination(
-            icon: Icon(Icons.info),
+            icon: Icon(Icons.info, color: Colors.white),
             label: 'Info',
           ),
           NavigationDestination(
-            icon: Icon(Icons.cut),
+            icon: Icon(Icons.cut, color: Colors.white),
             label: 'Prenota',
           ),
           NavigationDestination(
-            icon: Icon(Icons.shopping_bag_rounded),
+            icon: Icon(Icons.shopping_bag_rounded, color: Colors.white),
             label: 'Servizi',
           ),
           NavigationDestination(
-            icon: Icon(Icons.account_circle),
+            icon: Icon(Icons.account_circle, color: Colors.white),
             label: 'Utente',
           ),
         ],

@@ -12,8 +12,6 @@ const zenLight = TextStyle(
   fontSize: 18,
 );
 
-
-// style
 final ButtonStyle style =
 ElevatedButton.styleFrom(
   textStyle: const TextStyle(fontSize: 25),
@@ -24,3 +22,13 @@ ElevatedButton.styleFrom(
     borderRadius: BorderRadius.circular(50),
   ),
 );
+
+final ButtonStyle style2 =
+ElevatedButton.styleFrom(
+    textStyle: const TextStyle(fontSize: 25),
+    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+    backgroundColor: Colors.indigo,
+    shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.zero)
+);
+
