@@ -1,6 +1,7 @@
 import 'package:corso_flutter/widget/appBarBack.dart';
 import 'package:flutter/material.dart';
 import '../../style/style.dart';
+import 'Prenota.dart';
 
 class PrenotaBarbiere extends StatelessWidget {
   const PrenotaBarbiere({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class PrenotaBarbiere extends StatelessWidget {
 
               GestureDetector(
                 onTap: (){
-                  Navigator.push(context, MaterialPageRoute<void>(builder: (context) => const PrenotaBarbiere()));
+                  Navigator.push(context, MaterialPageRoute<void>(builder: (context) => const Prenota()));
                 },
                 child:Container(
                   width: double.infinity,

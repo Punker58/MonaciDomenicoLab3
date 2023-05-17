@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../style/style.dart';
 import 'main.dart';
-import '../../widget/appBar.dart';
 
 class Servizi extends StatelessWidget {
   const Servizi({Key? key}) : super(key: key);
